@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>XML Schema Documentation</title>
+    <meta http-equiv="Content-Type" content="text/xml; charset=iso-8859-1" />
+    <style type="text/css">
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* More-configurable styles */
+
+/******** General ********/
+
+/* Document body */
+body {
+   color: Black;
+   background-color: White;
+   font-family: Arial, sans-serif;
+   font-size: 10pt;
+}
+/* Horizontal rules */
+hr {
+   color: black;
+}
+/* Document title */
+h1 {
+   font-size: 18pt;
+   letter-spacing: 2px;
+   border-bottom: 1px #ccc solid;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+/* Main section headers */
+h2 {
+   font-size: 14pt;
+   letter-spacing: 1px;
+}
+/* Sub-section headers */
+h3, h3 a, h3 span {
+   font-size: 12pt;
+   font-weight: bold;
+   color: black;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties th, table.properties th a {
+   color: black;
+   background-color: #F99; /* Pink */
+}
+table.properties td {
+   background-color: #eee; /* Gray */
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   color: #963; /* Orange-brown */
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   border: 2px solid #999;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+   background-color: #ccc;
+}
+table.namespaces td {
+   background-color: #eee;
+}
+/* Target namespace of the schema */
+span.targetNS {
+   color: #06C;
+   font-weight: bold;
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+   color: #F93; /* Orange */
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   border: 2px solid #999; /* Gray */
+}
+
+/* XML Instance Representation table */
+div.sample div.contents {
+   border: 2px dashed black;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent div.contents {
+   border: 2px black solid;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   color: #036; /* Blue */
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Printer-version styles */
+
+@media print {
+
+/* Ensures that controls are hidden when printing */
+div#printerControls {
+   visibility: hidden;
+}
+div#globalControls {
+   visibility: hidden;
+}
+#legend {
+   display: none;
+}
+#legendTOC {
+   display: none;
+}
+#glossary {
+   display: none;
+}
+#glossaryTOC {
+   display: none;
+}
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Base styles */
+
+/******** General ********/
+
+/* Unordered lists */
+ul {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+/* Tables */
+table {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-left: 2px;
+   margin-right: 2px;
+}
+table th, table td {
+   font-size: 10pt;
+   vertical-align: top;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+table th {
+   font-weight: bold;
+   text-align: left;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties {
+   width: 90%;
+}
+table.properties th {
+   width: 30%;
+}
+/* Boxes that can make its content appear and disappear*/
+div.box {
+   margin: 1em;
+}
+   /* Box caption */
+div.box span.caption {
+   font-weight: bold;
+}
+   /* Button to open and close the box */
+div.box input.control {
+   width: 1.4em;
+   height: 1.4em;
+   text-align: center;
+   vertical-align: middle;
+   font-size: 11pt;
+}
+   /* Box contents */
+div.box div.contents {
+   margin-top: 3px;
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   white-space: nowrap;
+   font-weight: bold;
+   padding: 5px;
+   margin: 5px;
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   padding: 10px;
+   margin: 5px;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+}
+table.namespaces td {
+}
+/* Target namespace of the schema */
+span.targetNS {
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   width: 90%;
+}
+table.hierarchy th {
+   font-weight: normal;
+   font-style: italic;
+   width: 20%;
+}
+table.hierarchy th, table.hierarchy td {
+   padding: 5px;
+}
+
+/* XML Instance Representation table */
+div.sample {
+   width: 90%;
+}
+div.sample div.contents {
+   padding: 5px;
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+}
+   /* Normal elements and attributes */
+div.sample div.contents, div.sample div.contents a {
+   color: black;
+}
+   /* Group Headers */
+div.sample div.contents .group, div.sample div.contents .group a {
+   color: #999; /* Light gray */
+}
+   /* Type Information */
+div.sample div.contents .type, div.sample div.contents .type a {
+   color: #999; /* Light gray */
+}
+   /* Occurrence Information */
+div.sample div.contents .occurs, div.sample div.contents .occurs a {
+   color: #999; /* Light gray */
+}
+   /* Fixed values */
+div.sample div.contents .fixed {
+   color: #063; /* Green */
+   font-weight: bold;
+}
+   /* Simple type constraints */
+div.sample div.contents .constraint, div.sample div.contents .constraint a {
+   color: #999; /* Light gray */
+}
+   /* Elements and attributes inherited from base type */
+div.sample div.contents .inherited, div.sample div.contents .inherited a {
+   color: #666; /* Dark gray */
+}
+   /* Elements and attributes added to or changed from base type */
+div.sample div.contents .newFields {
+   font-weight: bold;
+}
+   /* Other type of information */
+div.sample div.contents .other, div.sample div.contents .other a {
+   color: #369; /* Blue */
+   font-style: italic;
+}
+   /* Link to open up window displaying documentation */
+div.sample div.contents a.documentation {
+   text-decoration: none;
+   padding-left: 3px;
+   padding-right: 3px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   font-weight: bold;
+   font-size: 11pt;
+   background-color: #FFD;
+   color: #069;
+}
+   /* Invert colors when hovering over link to open up window 
+      displaying documentation */
+div.sample div.contents a.documentation:hover {
+   color: #FFD;
+   background-color: #069;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent {
+   width: 90%;
+}
+div.schemaComponent div.contents {
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+   padding: 5px;
+}
+   /* Syntax characters */
+div.schemaComponent div.contents {
+   color: #00f; /* blue */
+}
+   /* Element and attribute tags */
+div.schemaComponent div.contents .scTag {
+   color: #933; /* maroon */
+}
+   /* Element and attribute content */
+div.schemaComponent div.contents .scContent, div.schemaComponent div.contents .scContent a {
+   color: black;
+   font-weight: bold;
+}
+   /* Comments */
+div.schemaComponent div.contents .comment {
+   color: #999; /* Light gray */
+}
+
+/******** Legend Section ********/
+
+div#legend table, div#legend div {
+   margin-bottom: 3px;
+}
+div#legend div.hint {
+   color: #999; /* Light gray */
+   width: 90%;
+   margin-left: 1em;
+   margin-bottom: 2em;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   font-weight: bold;
+}
+
+
+/******** Footer ********/
+
+.footer {
+   font-size: 8pt;
+}
+</style>
+    <script type="text/javascript">
+<!--
+/* IDs of XML Instance Representation boxes */
+var xiBoxes = new Array('element_AirShoppingRS_xibox', 'type_AirShopResMetadataType_xibox', 'element_AirShoppingProcessing_xibox', 'type_OrdViewProcessType_xibox');
+/* IDs of Schema Component Representation boxes */
+var scBoxes = new Array('schema_scbox', 'element_AirShoppingRS_scbox', 'type_AirShopResMetadataType_scbox', 'element_AirShoppingProcessing_scbox', 'type_OrdViewProcessType_scbox');
+
+/**
+ * Can get the ID of the button controlling
+ * a collapseable box by concatenating
+ * this string onto the ID of the box itself.
+ */
+var B_SFIX = "_button";
+
+/**
+ * Counter of documentation windows
+ * Used to give each window a unique name
+ */
+var windowCount = 0;
+
+/**
+ * Returns an element in the current HTML document.
+ * 
+ * @param elementID Identifier of HTML element
+ * @return               HTML element object
+ */
+function getElementObject(elementID) {
+    var elemObj = null;
+    if (document.getElementById) {
+        elemObj = document.getElementById(elementID);
+    }
+    return elemObj;
+}             
+
+/**
+ * Closes a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function closeBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="none";
+
+     // Change text of button 
+     if (boxObj.style.display=="none") {
+        buttonObj.value=" + ";
+     }
+  }
+}
+
+/**
+ * Opens a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function openBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="block";
+
+     // Change text of button
+     if (boxObj.style.display=="block") {
+        buttonObj.value=" - ";
+     }
+  }
+}
+
+/**
+ * Sets the state of a collapseable box.
+ * 
+ * @param boxID Identifier of box
+ * @param open If true, box is "opened",
+ *             Otherwise, box is "closed".
+ */
+function setState(boxID, open) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (open) {
+     openBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  } else {
+     closeBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  }
+}
+
+/**
+ * Switches the state of a collapseable box, e.g.
+ * if it's opened, it'll be closed, and vice versa.
+ * 
+ * @param boxID Identifier of box
+ */
+function switchState(boxID) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (boxObj.style.display=="none") {
+     // Box is closed, so open it
+     openBox(boxObj, buttonObj);
+  } else if (boxObj.style.display=="block") {
+     // Box is opened, so close it
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Closes all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function collapseAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Open all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function expandAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     openBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Makes all the control buttons of boxes appear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function viewControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "inline";
+        }
+    }
+}
+
+/**
+ * Makes all the control buttons of boxes disappear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function hideControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "none";
+        }
+    }
+}
+
+/**
+ * Sets the page for either printing mode
+ * or viewing mode. In printing mode, the page
+ * is made to be more readable when printing it out.
+ * In viewing mode, the page is more browsable.
+ *
+ * @param isPrinterVersion If true, display in
+ *                                 printing mode; otherwise, 
+ *                                 in viewing mode
+ */
+function displayMode(isPrinterVersion) {
+    var obj;
+    if (isPrinterVersion) {
+        // Hide global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "hidden";
+        }
+        // Hide Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        // Hide Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Expand all Schema Component Representation tables
+        expandAll(scBoxes);
+
+        // Hide Control buttons
+        hideControlButtons(xiBoxes);
+        hideControlButtons(scBoxes);
+    } else {
+        // View global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "visible";
+        }
+        // View Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        // View Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Collapse all Schema Component Representation tables
+        collapseAll(scBoxes);
+
+        // View Control buttons
+        viewControlButtons(xiBoxes);
+        viewControlButtons(scBoxes);
+    }
+}
+
+/**
+ * Opens up a window displaying the documentation
+ * of a schema component in the XML Instance
+ * Representation table.
+ * 
+ * @param compDesc      Description of schema component 
+ * @param compName      Name of schema component 
+ * @param docTextArray Array containing the paragraphs 
+ *                           of the new document
+ */
+function viewDocumentation(compDesc, compName, docTextArray) {
+  var width = 400;
+  var height = 200;
+  var locX = 100;
+  var locY = 200;
+
+  /* Generate content */
+  var actualText = "<html>";
+  actualText += "<head><title>";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": " + compName;
+  }
+  actualText += "</title></head>";
+  actualText += "<body bgcolor=\"#FFFFEE\">";
+  // Title
+  actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold; letter-spacing:1px;\">";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": <span style=\"color:#006699\">" + compName + "</span>";
+  }
+  actualText += "</p>";
+  // Documentation
+  var idx;
+  for (idx = 0; idx < docTextArray.length; idx++) {
+     actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 10pt;\">" + docTextArray[idx] + "</p>";
+  }
+  // Link to close window
+  actualText += "<a href=\"javascript:void(0)\" onclick=\"window.close();\" style=\"font-family: Arial, sans-serif; font-size: 8pt;\">Close</a>";
+  actualText += "</body></html>";
+
+  /* Display window */
+  windowCount++;
+  var docWindow = window.open("", "documentation"+windowCount, "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable,alwaysRaised,dependent,titlebar=no,width="+width+",height="+height+",screenX="+locX+",left="+locX+",screenY="+locY+",top="+locY);
+  docWindow.document.write(actualText);
+}
+
+// -->
+</script>
+  </head>
+  <body>
+    <h1>
+      <a name="top" id="top">XML Schema Documentation</a>
+    </h1>
+    <div style="float: right;">
+      <div id="printerControls" style="display:none;"><input type="checkbox" onclick="displayMode(this.checked)" />Printer-friendly Version</div>
+      <script type="text/javascript">
+<!--
+
+var pc = getElementObject("printerControls");
+if (pc != null) {
+   pc.style.display="block";
+}
+               
+// -->
+</script>
+      <div id="globalControls" style="display:none">
+        <strong>XML Instance Representation:</strong>
+        <br />
+        <span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(xiBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(xiBoxes)">Collapse All</a> ]</span>
+        <br />
+        <br />
+        <strong>Schema Component Representation:</strong>
+        <br />
+        <span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(scBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(scBoxes)">Collapse All</a> ]</span>
+      </div>
+      <script type="text/javascript">
+<!--
+
+var gc = getElementObject("globalControls");
+if (gc != null) {
+   gc.style.display="block";
+}
+               
+// -->
+</script>
+    </div>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li>
+        <a href="#SchemaProperties">Schema Document Properties</a>
+      </li>
+      <li>
+        <a href="#SchemaDeclarations">Global Declarations</a>
+        <ul>
+          <li>
+            <a href="#element_AirShoppingProcessing">Element: <strong>AirShoppingProcessing</strong></a>
+          </li>
+          <li>
+            <a href="#element_AirShoppingRS">Element: <strong>AirShoppingRS</strong></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#SchemaDefinitions">Global Definitions</a>
+        <ul>
+          <li>
+            <a href="#type_AirShopResMetadataType">Complex Type: <strong>AirShopResMetadataType</strong></a>
+          </li>
+          <li>
+            <a href="#type_OrdViewProcessType">Complex Type: <strong>OrdViewProcessType</strong></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul id="legendTOC" style="margin-top: 0em">
+      <li>
+        <a href="#Legend">Legend</a>
+      </li>
+    </ul>
+    <ul id="glossaryTOC" style="margin-top: 0em">
+      <li>
+        <a href="#Glossary">Glossary</a>
+      </li>
+    </ul>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h2>
+      <a name="SchemaProperties" id="SchemaProperties">Schema Document Properties</a>
+    </h2>
+    <table class="properties">
+      <tr>
+        <th>
+          <a title="Look up 'Target Namespace' in glossary" href="#term_TargetNS">Target Namespace</a>
+        </th>
+        <td>None</td>
+      </tr>
+      <tr>
+        <th>Version</th>
+        <td>5.000</td>
+      </tr>
+      <tr>
+        <th>Element and Attribute Namespaces</th>
+        <td>
+          <ul>
+            <li>Global element and attribute declarations belong to this schema's target namespace.</li>
+            <li>By default, local element declarations belong to this schema's target namespace.</li>
+            <li>By default, local attribute declarations have no namespace.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Schema Composition</th>
+        <td>
+          <ul>
+            <li>This schema includes components from the following schema document(s):<ul><li>edist_commontypes.xsd</li><li>aidm_commontypes.xsd</li></ul></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <h3>Declared Namespaces</h3>
+    <table class="namespaces">
+      <tr>
+        <th>Prefix</th>
+        <th>Namespace</th>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_xml" id="ns_xml">xml</a>
+        </td>
+        <td>http://www.w3.org/XML/1998/namespace</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_xsd" id="ns_xsd">xsd</a>
+        </td>
+        <td>http://www.w3.org/2001/XMLSchema</td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div><input type="button" id="schema_scbox_button" class="control" onclick="switchState('schema_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="schema_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xsd:schema</span> <span class="scTag">elementFormDefault</span>="<span class="scContent">qualified</span>" <span class="scTag">attributeFormDefault</span>="<span class="scContent">unqualified</span>" <span class="scTag">version</span>="<span class="scContent">5.000</span>" <span class="scTag">id</span>="<span class="scContent">IATA2017.2</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:include</span> <span class="scTag">schemaLocation</span>="<span class="scContent">edist_commontypes.xsd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:include</span> <span class="scTag">schemaLocation</span>="<span class="scContent">aidm_commontypes.xsd</span>"/&gt;</div><div class="scContent" style="margin-left: 1.5em">...</div>&lt;/<span class="scTag">xsd:schema</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('schema_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h2>
+      <a name="SchemaDeclarations" id="SchemaDeclarations">Global Declarations</a>
+    </h2>
+    <h3>Element: <a name="element_AirShoppingProcessing" class="name" id="element_AirShoppingProcessing">AirShoppingProcessing</a></h3>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>AirShoppingProcessing</td>
+      </tr>
+      <tr>
+        <th>Type</th>
+        <td>
+          <span class="type">
+            <a title="Jump to &quot;OrdViewProcessType&quot; type definition." href="#type_OrdViewProcessType">OrdViewProcessType</a>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <a title="Look up 'Nillable' in glossary" href="#term_Nillable">Nillable</a>
+        </th>
+        <td>no</td>
+      </tr>
+      <tr>
+        <th>
+          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+        </th>
+        <td>no</td>
+      </tr>
+      <tr>
+        <th>Documentation</th>
+        <td>Transaction Processing Results, including processing status, alerts, business warnings, supplemental marketing messages and policy.</td>
+      </tr>
+    </table>
+    <div class="sample box">
+      <div><input type="button" id="element_AirShoppingProcessing_xibox_button" class="control" onclick="switchState('element_AirShoppingProcessing_xibox'); return false;" style="display: none" /> <span class="caption">XML Instance Representation</span></div>
+      <div id="element_AirShoppingProcessing_xibox" class="contents">
+        <div style="margin-left: 0em">&lt;AirShoppingProcessing&gt; <br /><div class="other" style="margin-left: 1.5em;">&lt;!-- '<span class="type"><a title="&quot;OrderProcessResultType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OrderProcessResultType&quot; type definition could not be found.');">OrderProcessResultType</a></span>' super type was not found in this schema. Some elements and attributes may be missing. --&gt;</div><div style="margin-left: 1.5em">&lt;<a title="&quot;Alerts&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Alerts&quot; element declaration could not be found.');">Alerts</a>&gt; ... &lt;/<a title="&quot;Alerts&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Alerts&quot; element declaration could not be found.');">Alerts</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;<a title="&quot;Notices&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Notices&quot; element declaration could not be found.');">Notices</a>&gt; ... &lt;/<a title="&quot;Notices&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Notices&quot; element declaration could not be found.');">Notices</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;<a title="&quot;Remarks&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Remarks&quot; element declaration could not be found.');">Remarks</a>&gt; ... &lt;/<a title="&quot;Remarks&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Remarks&quot; element declaration could not be found.');">Remarks</a>&gt; <span class="occurs">[0..1]</span></div>&lt;/AirShoppingProcessing&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('element_AirShoppingProcessing_xibox', true);
+// -->
+</script>
+    </div>
+    <div class="schemaComponent box">
+      <div><input type="button" id="element_AirShoppingProcessing_scbox_button" class="control" onclick="switchState('element_AirShoppingProcessing_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="element_AirShoppingProcessing_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">AirShoppingProcessing</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="Jump to &quot;OrdViewProcessType&quot; type definition." href="#type_OrdViewProcessType">OrdViewProcessType</a></span></span>"/&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('element_AirShoppingProcessing_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Element: <a name="element_AirShoppingRS" class="name" id="element_AirShoppingRS">AirShoppingRS</a></h3>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>AirShoppingRS</td>
+      </tr>
+      <tr>
+        <th>Type</th>
+        <td>Locally-defined complex type</td>
+      </tr>
+      <tr>
+        <th>
+          <a title="Look up 'Nillable' in glossary" href="#term_Nillable">Nillable</a>
+        </th>
+        <td>no</td>
+      </tr>
+      <tr>
+        <th>
+          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+        </th>
+        <td>no</td>
+      </tr>
+      <tr>
+        <th>Documentation</th>
+        <td>The AirShopping transaction set supports both demanding and flexible shopping experiences for anonymous or personalized shopping.
+
+The combination of functionally-rich attribute and affinity shopping support date range or specific month (calendar) shopping as an example.
+
+The response returns offers which may include branded offers or itinerary-priced offers with or without ancillary services. It also returns applicable rules for the integrated fares as well as for each service.
+
+The message also returns multi-media content at message level as well as media references at the individual offer level.<br /> More information at: description.</td>
+      </tr>
+    </table>
+    <div class="sample box">
+      <div><input type="button" id="element_AirShoppingRS_xibox_button" class="control" onclick="switchState('element_AirShoppingRS_xibox'); return false;" style="display: none" /> <span class="caption">XML Instance Representation</span></div>
+      <div id="element_AirShoppingRS_xibox" class="contents">
+        <div style="margin-left: 0em">&lt;AirShoppingRS<div class="other" style="margin-left: 0.5em">Attribute group reference (not shown): <a title="&quot;IATA_PayloadStdAttributes&quot; attribute group definition could not be found." href="javascript:void(0)" onclick="alert('&quot;IATA_PayloadStdAttributes&quot; attribute group definition could not be found.');">IATA_PayloadStdAttributes</a></div>&gt; <br /><span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a> <span class="occurs">[1]</span></span><br /><div style="margin-left: 3em">&lt;<a title="&quot;Document&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Document&quot; element declaration could not be found.');">Document</a>&gt; ... &lt;/<a title="&quot;Document&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Document&quot; element declaration could not be found.');">Document</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;Success&gt; <span class="type"><a title="&quot;SuccessType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;SuccessType&quot; type definition could not be found.');">SuccessType</a></span> &lt;/Success&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The presence of the empty Success element explicitly indicates that the message succeeded.'); viewDocumentation('Element', 'Success', docArray);">?</a></div><div style="margin-left: 3em">&lt;Warnings&gt; <span class="type"><a title="&quot;WarningsType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;WarningsType&quot; type definition could not be found.');">WarningsType</a></span> &lt;/Warnings&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Used in conjunction with the Success element to define one or more business errors.'); viewDocumentation('Element', 'Warnings', docArray);">?</a></div><div style="margin-left: 3em">&lt;<a title="Jump to &quot;AirShoppingProcessing&quot; element declaration." href="#element_AirShoppingProcessing">AirShoppingProcessing</a>&gt; ... &lt;/<a title="Jump to &quot;AirShoppingProcessing&quot; element declaration." href="#element_AirShoppingProcessing">AirShoppingProcessing</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;ShoppingResponseID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ShoppingResponseID&quot; element declaration could not be found.');">ShoppingResponseID</a>&gt; ... &lt;/<a title="&quot;ShoppingResponseID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ShoppingResponseID&quot; element declaration could not be found.');">ShoppingResponseID</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 3em">&lt;OffersGroup&gt;  <span class="occurs">[1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'OffersGroup', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;<a title="&quot;AllOffersSnapshot&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AllOffersSnapshot&quot; element declaration could not be found.');">AllOffersSnapshot</a>&gt; ... &lt;/<a title="&quot;AllOffersSnapshot&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AllOffersSnapshot&quot; element declaration could not be found.');">AllOffersSnapshot</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;AirlineOffers&gt;  <span class="occurs">[1..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'AirlineOffers', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;<a title="&quot;AirlineOfferSnapshot&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AirlineOfferSnapshot&quot; element declaration could not be found.');">AirlineOfferSnapshot</a>&gt; ... &lt;/<a title="&quot;AirlineOfferSnapshot&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AirlineOfferSnapshot&quot; element declaration could not be found.');">AirlineOfferSnapshot</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;Offer&gt;  <span class="occurs">[0..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'Offer', docArray);">?</a><br /><div class="other" style="margin-left: 1.5em;">&lt;!-- '<span class="type"><a title="&quot;OfferType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OfferType&quot; type definition could not be found.');">OfferType</a></span>' super type was not found in this schema. Some elements and attributes may be missing. --&gt;</div><div style="margin-left: 1.5em">&lt;FlightsOverview&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Summary of proposed flight information in the context of this specific Offer.'); viewDocumentation('Element', 'FlightsOverview', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;FlightRef<br /><span style="margin-left: 0.5em"> ODRef="<span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span> <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Reference to the Origin/Destination ID specified within this Offer.'); viewDocumentation('Attribute', 'ODRef', docArray);">?</a>"</span><br /><span style="margin-left: 0.5em"> PriceClassRef="<span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span> <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Flight-level price class'); viewDocumentation('Attribute', 'PriceClassRef', docArray);">?</a>"</span>&gt;  <span class="occurs">[1..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Reference to the Flight ID specified within this Offer. Should be repeated for all Flights included.'); viewDocumentation('Element', 'FlightRef', docArray);">?</a><br /><span style="margin-left: 1.5em"> <span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span> </span><br />&lt;/FlightRef&gt;</div><div style="margin-left: 1.5em">&lt;ItineraryPriceClassRef&gt; <span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span> &lt;/ItineraryPriceClassRef&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Itinerary-level price class (eg. most restrictive applies)'); viewDocumentation('Element', 'ItineraryPriceClassRef', docArray);">?</a></div>&lt;/FlightsOverview&gt;</div><div style="margin-left: 1.5em">&lt;OfferItem&gt; <span class="type"><a title="&quot;OfferItemType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OfferItemType&quot; type definition could not be found.');">OfferItemType</a></span> &lt;/OfferItem&gt; <span class="occurs">[1..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'OfferItem', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;BaggageAllowance&gt;  <span class="occurs">[0..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'BaggageAllowance', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;FlightRefs&gt; <span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREFS</span> &lt;/FlightRefs&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'FlightRefs', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;PassengerRefs&gt; <span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREFS</span> &lt;/PassengerRefs&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'PassengerRefs', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;BaggageAllowanceRef&gt; <span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span> &lt;/BaggageAllowanceRef&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'BaggageAllowanceRef', docArray);">?</a></div>&lt;/BaggageAllowance&gt;</div>&lt;/Offer&gt;</div><div style="margin-left: 1.5em">&lt;ALaCarteOffer&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Container for standalone optional OfferItems. This supports the shopping basket concept. The main purpose of this structure is to reduce the size of the message by inserting Offer Items which are applicable to multiple flight-related Offers defined above. NB. For the OfferID of the ALaCarteOffer: Default OfferID identifier for A La Carte Offer Items in a scenario where items here are not selected for a flight-related Offer above.'); viewDocumentation('Element', 'ALaCarteOffer', docArray);">?</a><br /><div class="other" style="margin-left: 1.5em;">&lt;!-- '<span class="type"><a title="&quot;OfferType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OfferType&quot; type definition could not be found.');">OfferType</a></span>' super type was not found in this schema. Some elements and attributes may be missing. --&gt;</div><div style="margin-left: 1.5em">&lt;ALaCarteOfferItem&gt; <span class="type"><a title="&quot;ALaCarteOfferItemType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ALaCarteOfferItemType&quot; type definition could not be found.');">ALaCarteOfferItemType</a></span> &lt;/ALaCarteOfferItem&gt; <span class="occurs">[1..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('One Service or Service Bundle which is priced per unit. A La Carte Offer Items are optional and variable quantities of these can be selected by any of the eligible passengers for the applicable segments and/or price classes.'); viewDocumentation('Element', 'ALaCarteOfferItem', docArray);">?</a></div>&lt;/ALaCarteOffer&gt;</div><div style="margin-left: 1.5em">&lt;PriceCalendar<br /><span style="margin-left: 0.5em"> LeadPriceInd="<span class="type">anySimpleType</span> <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('When true, this is a lead calendar shopping price for a date that is prior to or after the required travel date.'); viewDocumentation('Attribute', 'LeadPriceInd', docArray);">?</a>"</span>&gt;  <span class="occurs">[0..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Calendar based Flight Price. Note: this contains lead-based flight prices for the requested travel date and requested lead calendar period. This capability supports multi-day calendar shopping, e.g. returning priced flight offers for a specified period before and/or after the actual requested date. The mandatory PriceCalendarDate contains the date associated with the price. If it is a lead calendar price, the @LeadPriceInd should be set to true.'); viewDocumentation('Element', 'PriceCalendar', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;PriceCalendarDate<br /><span style="margin-left: 0.5em"> OriginDestinationReference="<span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span> <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Association to one Origin/Destination instance. Example: od1'); viewDocumentation('Attribute', 'OriginDestinationReference', docArray);">?</a>"</span>&gt;  <span class="occurs">[1..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Price calendar date, example 2015-04-25. [Encoding Scheme] ISO 8601 Date Format (YYYY-MM-DD)'); viewDocumentation('Element', 'PriceCalendarDate', docArray);">?</a><br /><span style="margin-left: 1.5em"> <span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date</span> </span><br />&lt;/PriceCalendarDate&gt;</div><div style="margin-left: 1.5em">&lt;TotalPrice&gt; <span class="type"><a title="&quot;EncodedPriceType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;EncodedPriceType&quot; type definition could not be found.');">EncodedPriceType</a></span> &lt;/TotalPrice&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The total price for all Travelers associated with this offer.'); viewDocumentation('Element', 'TotalPrice', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;PTC<br /><span style="margin-left: 0.5em"> Quantity="<span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:integer</span> <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Attribute', 'Quantity', docArray);">?</a>"</span>&gt;  <span class="occurs">[0..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'PTC', docArray);">?</a><br /><span style="margin-left: 1.5em"> <span class="type"><a title="&quot;PaxSimpleType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;PaxSimpleType&quot; type definition could not be found.');">PaxSimpleType</a></span> </span><br />&lt;/PTC&gt;</div>&lt;/PriceCalendar&gt;</div>&lt;/AirlineOffers&gt;</div>&lt;/OffersGroup&gt;</div><div style="margin-left: 3em">&lt;Payments&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Payment information.'); viewDocumentation('Element', 'Payments', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;Payment&gt;  <span class="occurs">[1..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Payment detail, including association(s).'); viewDocumentation('Element', 'Payment', docArray);">?</a><br /><div class="other" style="margin-left: 1.5em;">&lt;!-- '<span class="type"><a title="&quot;OrderPaymentFormType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OrderPaymentFormType&quot; type definition could not be found.');">OrderPaymentFormType</a></span>' super type was not found in this schema. Some elements and attributes may be missing. --&gt;</div><div style="margin-left: 1.5em">&lt;Offers&gt;  <span class="occurs">[0..1]</span> <br /><div style="margin-left: 1.5em">&lt;Offer<br /><span style="margin-left: 0.5em"> OfferID="<span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Reference to the OfferID of the selected Offer (either a standard Offer or an a-la-carte Offer) returned in a previous shopping response.'); viewDocumentation('Attribute', 'OfferID', docArray);">?</a>"</span><br /><span style="margin-left: 0.5em"> Owner="<span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Designator of Airline that owns/ assigned these IDs. Examples: BA Encoding Scheme: IATA/ A4A (two or three character) Airline Designator Code'); viewDocumentation('Attribute', 'Owner', docArray);">?</a>"</span><br /><span style="margin-left: 0.5em"> ResponseID="<span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Reference to unique shopping session response ID, as provided in the airline\'s previous shopping response.'); viewDocumentation('Attribute', 'ResponseID', docArray);">?</a>"</span>&gt;  <span class="occurs">[1..*]</span> <br /><div style="margin-left: 1.5em">&lt;OfferItemID&gt; <span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/OfferItemID&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Association to one or multiple Offer Items instance(s). Example:OI1 OI2'); viewDocumentation('Element', 'OfferItemID', docArray);">?</a></div>&lt;/Offer&gt;</div>&lt;/Offers&gt;</div>&lt;/Payment&gt;</div>&lt;/Payments&gt;</div><div style="margin-left: 3em">&lt;Promotions&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Promotion information.'); viewDocumentation('Element', 'Promotions', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;Promotion&gt; <span class="type"><a title="&quot;PromotionType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;PromotionType&quot; type definition could not be found.');">PromotionType</a></span> &lt;/Promotion&gt; <span class="occurs">[1..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Promotion Code.'); viewDocumentation('Element', 'Promotion', docArray);">?</a></div>&lt;/Promotions&gt;</div><div style="margin-left: 3em">&lt;<a title="&quot;Commission&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Commission&quot; element declaration could not be found.');">Commission</a>&gt; ... &lt;/<a title="&quot;Commission&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Commission&quot; element declaration could not be found.');">Commission</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 3em">&lt;DataLists&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Data Lists(s).'); viewDocumentation('Element', 'DataLists', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;PassengerList&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Passenger data list definition.'); viewDocumentation('Element', 'PassengerList', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;Passenger&gt; <span class="type"><a title="&quot;PassengerType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;PassengerType&quot; type definition could not be found.');">PassengerType</a></span> &lt;/Passenger&gt; <span class="occurs">[1..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Any person except members of the crew carried or to be carried with the consent of the carrier, on board of any transport vehicle such as aircraft, train, bus, ship.'); viewDocumentation('Element', 'Passenger', docArray);">?</a></div>&lt;/PassengerList&gt;</div><div style="margin-left: 1.5em">&lt;ContactList&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Contact data list definition.'); viewDocumentation('Element', 'ContactList', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;ContactInformation&gt; <span class="type"><a title="&quot;ContactInformationType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ContactInformationType&quot; type definition could not be found.');">ContactInformationType</a></span> &lt;/ContactInformation&gt; <span class="occurs">[1..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The electronic or geographic address which a party has provided as the contact channel. For example, contact email, contact postal address, contact phone number.'); viewDocumentation('Element', 'ContactInformation', docArray);">?</a></div>&lt;/ContactList&gt;</div><div style="margin-left: 1.5em">&lt;<a title="&quot;BagDisclosureList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BagDisclosureList&quot; element declaration could not be found.');">BagDisclosureList</a>&gt; ... &lt;/<a title="&quot;BagDisclosureList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BagDisclosureList&quot; element declaration could not be found.');">BagDisclosureList</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;BaggageAllowanceList&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Checked or Carry-On Baggage Allowance detail. Use BaggageCategory to specify which of the two.'); viewDocumentation('Element', 'BaggageAllowanceList', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;BaggageAllowance<br /><span style="margin-left: 0.5em"> BaggageAllowanceID="<span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:ID</span> <span class="occurs">[1]</span>"</span>&gt;  <span class="occurs">[1..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'BaggageAllowance', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;BaggageCategory&gt; <span class="type"><a title="&quot;BaggageCategoryListType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;BaggageCategoryListType&quot; type definition could not be found.');">BaggageCategoryListType</a></span> &lt;/BaggageCategory&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Enumeration: CarryOn Checked'); viewDocumentation('Element', 'BaggageCategory', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a title="&quot;AllowanceDescription&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AllowanceDescription&quot; element declaration could not be found.');">AllowanceDescription</a>&gt; ... &lt;/<a title="&quot;AllowanceDescription&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AllowanceDescription&quot; element declaration could not be found.');">AllowanceDescription</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;<a title="&quot;DimensionAllowance&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DimensionAllowance&quot; element declaration could not be found.');">DimensionAllowance</a>&gt; ... &lt;/<a title="&quot;DimensionAllowance&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DimensionAllowance&quot; element declaration could not be found.');">DimensionAllowance</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;<a title="&quot;PieceAllowance&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PieceAllowance&quot; element declaration could not be found.');">PieceAllowance</a>&gt; ... &lt;/<a title="&quot;PieceAllowance&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PieceAllowance&quot; element declaration could not be found.');">PieceAllowance</a>&gt; <span class="occurs">[0..*]</span></div><div style="margin-left: 1.5em">&lt;<a title="&quot;WeightAllowance&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;WeightAllowance&quot; element declaration could not be found.');">WeightAllowance</a>&gt; ... &lt;/<a title="&quot;WeightAllowance&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;WeightAllowance&quot; element declaration could not be found.');">WeightAllowance</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;BaggageDeterminingCarrier&gt; <span class="type"><a title="&quot;BaggageDeterminingCarrierType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;BaggageDeterminingCarrierType&quot; type definition could not be found.');">BaggageDeterminingCarrierType</a></span> &lt;/BaggageDeterminingCarrier&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Baggage Determining Carrier as defined in resolution 722 (f), and who&#8217;s baggage rules apply.'); viewDocumentation('Element', 'BaggageDeterminingCarrier', docArray);">?</a></div>&lt;/BaggageAllowance&gt;</div>&lt;/BaggageAllowanceList&gt;</div><div style="margin-left: 1.5em">&lt;<a title="&quot;ClassOfServiceList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ClassOfServiceList&quot; element declaration could not be found.');">ClassOfServiceList</a>&gt; ... &lt;/<a title="&quot;ClassOfServiceList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ClassOfServiceList&quot; element declaration could not be found.');">ClassOfServiceList</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;<a title="&quot;ContentSourceList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ContentSourceList&quot; element declaration could not be found.');">ContentSourceList</a>&gt; ... &lt;/<a title="&quot;ContentSourceList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ContentSourceList&quot; element declaration could not be found.');">ContentSourceList</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;DescriptionList&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Description Details'); viewDocumentation('Element', 'DescriptionList', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;<a title="&quot;Description&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Description&quot; element declaration could not be found.');">Description</a>&gt; ... &lt;/<a title="&quot;Description&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Description&quot; element declaration could not be found.');">Description</a>&gt; <span class="occurs">[1..*]</span></div>&lt;/DescriptionList&gt;</div><div style="margin-left: 1.5em">&lt;<a title="&quot;DisclosureList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DisclosureList&quot; element declaration could not be found.');">DisclosureList</a>&gt; ... &lt;/<a title="&quot;DisclosureList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DisclosureList&quot; element declaration could not be found.');">DisclosureList</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;<a title="&quot;FareList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;FareList&quot; element declaration could not be found.');">FareList</a>&gt; ... &lt;/<a title="&quot;FareList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;FareList&quot; element declaration could not be found.');">FareList</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;FlightSegmentList&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('List of Flight Segments'); viewDocumentation('Element', 'FlightSegmentList', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;FlightSegment&gt; <span class="type"><a title="&quot;ListOfFlightSegmentType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ListOfFlightSegmentType&quot; type definition could not be found.');">ListOfFlightSegmentType</a></span> &lt;/FlightSegment&gt; <span class="occurs">[1..*]</span></div>&lt;/FlightSegmentList&gt;</div><div style="margin-left: 1.5em">&lt;FlightList&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('List of Flight elements.'); viewDocumentation('Element', 'FlightList', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;Flight<div class="other" style="margin-left: 0.5em">Attribute group reference (not shown): <a title="&quot;ObjAssociationAttrGroup&quot; attribute group definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ObjAssociationAttrGroup&quot; attribute group definition could not be found.');">ObjAssociationAttrGroup</a></div><br /><span style="margin-left: 0.5em"> FlightKey="<span class="type"><a title="&quot;KeyIdentifier&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;KeyIdentifier&quot; type definition could not be found.');">KeyIdentifier</a></span> <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('A globally unique identifier for this Flight instance. Example: flight1'); viewDocumentation('Attribute', 'FlightKey', docArray);">?</a>"</span>&gt;  <span class="occurs">[1..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Journey information describing the travel between an airport/city where travel commences and an airport/city where travel ultimately terminates. A journey may be comprised of one or more segments. Note: This node will be renamed to journey in future releases.'); viewDocumentation('Element', 'Flight', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;Journey&gt; <span class="type"><a title="&quot;TotalJourneyType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;TotalJourneyType&quot; type definition could not be found.');">TotalJourneyType</a></span> &lt;/Journey&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Flight journey information.'); viewDocumentation('Element', 'Journey', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a title="&quot;SegmentReferences&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;SegmentReferences&quot; element declaration could not be found.');">SegmentReferences</a>&gt; ... &lt;/<a title="&quot;SegmentReferences&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;SegmentReferences&quot; element declaration could not be found.');">SegmentReferences</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 1.5em">&lt;Settlement&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'Settlement', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;Method&gt; <span class="type"><a title="&quot;IATA_CodeType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;IATA_CodeType&quot; type definition could not be found.');">IATA_CodeType</a></span> &lt;/Method&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'Method', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;InterlineSettlementValue&gt; <span class="type"><a title="&quot;CurrencyAmountOptType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;CurrencyAmountOptType&quot; type definition could not be found.');">CurrencyAmountOptType</a></span> &lt;/InterlineSettlementValue&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'InterlineSettlementValue', docArray);">?</a></div>&lt;/Settlement&gt;</div>&lt;/Flight&gt;</div>&lt;/FlightList&gt;</div><div style="margin-left: 1.5em">&lt;OriginDestinationList&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('List of Origin/Destination elements.'); viewDocumentation('Element', 'OriginDestinationList', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;<a title="&quot;OriginDestination&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OriginDestination&quot; element declaration could not be found.');">OriginDestination</a>&gt; ... &lt;/<a title="&quot;OriginDestination&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OriginDestination&quot; element declaration could not be found.');">OriginDestination</a>&gt; <span class="occurs">[1..*]</span></div>&lt;/OriginDestinationList&gt;</div><div style="margin-left: 1.5em">&lt;<a title="&quot;InstructionsList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InstructionsList&quot; element declaration could not be found.');">InstructionsList</a>&gt; ... &lt;/<a title="&quot;InstructionsList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InstructionsList&quot; element declaration could not be found.');">InstructionsList</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;<a title="&quot;MediaList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;MediaList&quot; element declaration could not be found.');">MediaList</a>&gt; ... &lt;/<a title="&quot;MediaList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;MediaList&quot; element declaration could not be found.');">MediaList</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;<a title="&quot;PenaltyList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PenaltyList&quot; element declaration could not be found.');">PenaltyList</a>&gt; ... &lt;/<a title="&quot;PenaltyList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PenaltyList&quot; element declaration could not be found.');">PenaltyList</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;PriceClassList&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Price Class list.'); viewDocumentation('Element', 'PriceClassList', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;PriceClass&gt; <span class="type"><a title="&quot;PriceClassType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;PriceClassType&quot; type definition could not be found.');">PriceClassType</a></span> &lt;/PriceClass&gt; <span class="occurs">[1..*]</span></div>&lt;/PriceClassList&gt;</div><div style="margin-left: 1.5em">&lt;ServiceDefinitionList&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Description and characteristics of a Service'); viewDocumentation('Element', 'ServiceDefinitionList', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;ServiceDefinition&gt; <span class="type"><a title="&quot;ServiceDefinitionType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ServiceDefinitionType&quot; type definition could not be found.');">ServiceDefinitionType</a></span> &lt;/ServiceDefinition&gt; <span class="occurs">[1..*]</span></div>&lt;/ServiceDefinitionList&gt;</div><div style="margin-left: 1.5em">&lt;<a title="&quot;TermsList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TermsList&quot; element declaration could not be found.');">TermsList</a>&gt; ... &lt;/<a title="&quot;TermsList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TermsList&quot; element declaration could not be found.');">TermsList</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em">&lt;SeatDefinitionList&gt;  <span class="occurs">[0..1]</span> <br /><div style="margin-left: 1.5em">&lt;SeatDefinition<br /><span style="margin-left: 0.5em"> SeatDefinitionID="<span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:ID</span> <span class="occurs">[1]</span>"</span>&gt;  <span class="occurs">[0..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Seat information by aircraft section.'); viewDocumentation('Element', 'SeatDefinition', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;Description&gt;  <span class="occurs">[0..*]</span> <br /><div style="margin-left: 1.5em">&lt;Text<div class="other" style="margin-left: 0.5em">Attribute group reference (not shown): <a title="&quot;ObjAssociationAttrGroup&quot; attribute group definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ObjAssociationAttrGroup&quot; attribute group definition could not be found.');">ObjAssociationAttrGroup</a></div>&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'Text', docArray);">?</a><br /><span style="margin-left: 1.5em"> <span class="type"><a title="&quot;DescriptionSimpleType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;DescriptionSimpleType&quot; type definition could not be found.');">DescriptionSimpleType</a></span> </span><br />&lt;/Text&gt;</div><div style="margin-left: 1.5em">&lt;MarkupStyle&gt; <span class="type"><a title="&quot;ProperNameSimpleType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ProperNameSimpleType&quot; type definition could not be found.');">ProperNameSimpleType</a></span> &lt;/MarkupStyle&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'MarkupStyle', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;Link&gt; <span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/Link&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'Link', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;Media&gt;  <span class="occurs">[0..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'Media', docArray);">?</a><br /><span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a> <span class="occurs">[1]</span></span><br /><div style="margin-left: 3em">&lt;ObjectID&gt; <span class="type"><a title="&quot;MediaID_Type&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;MediaID_Type&quot; type definition could not be found.');">MediaID_Type</a></span> &lt;/ObjectID&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'ObjectID', docArray);">?</a></div><div style="margin-left: 3em">&lt;<a title="&quot;MediaLink&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;MediaLink&quot; element declaration could not be found.');">MediaLink</a>&gt; ... &lt;/<a title="&quot;MediaLink&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;MediaLink&quot; element declaration could not be found.');">MediaLink</a>&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'MediaLink', docArray);">?</a></div><div style="margin-left: 3em">&lt;AttachmentID&gt; <span class="type"><a title="&quot;MediaID_Type&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;MediaID_Type&quot; type definition could not be found.');">MediaID_Type</a></span> &lt;/AttachmentID&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'AttachmentID', docArray);">?</a></div><span class="group" style="margin-left: 1.5em">End Choice</span><br />&lt;/Media&gt;</div>&lt;/Description&gt;</div><div style="margin-left: 1.5em">&lt;Marketing&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'Marketing', docArray);">?</a><br /><div class="other" style="margin-left: 1.5em;">&lt;!-- '<span class="type"><a title="&quot;SeatMapMessageType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;SeatMapMessageType&quot; type definition could not be found.');">SeatMapMessageType</a></span>' super type was not found in this schema. Some elements and attributes may be missing. --&gt;</div>&lt;/Marketing&gt;</div><div style="margin-left: 1.5em">&lt;SeatCharacteristicCode&gt; <span class="type"><a title="&quot;CodesetValueSimpleType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;CodesetValueSimpleType&quot; type definition could not be found.');">CodesetValueSimpleType</a></span> &lt;/SeatCharacteristicCode&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'SeatCharacteristicCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;UOM&gt; <span class="type"><a title="&quot;SizeUnitSimpleType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;SizeUnitSimpleType&quot; type definition could not be found.');">SizeUnitSimpleType</a></span> &lt;/UOM&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'UOM', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;SeatWidthLow&gt; <span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:decimal</span> &lt;/SeatWidthLow&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'SeatWidthLow', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;SeatPitchLow&gt; <span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:decimal</span> &lt;/SeatPitchLow&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'SeatPitchLow', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;Keywords&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'Keywords', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;KeyWord&gt; <span class="type"><a title="&quot;KeyWordType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;KeyWordType&quot; type definition could not be found.');">KeyWordType</a></span> &lt;/KeyWord&gt; <span class="occurs">[1..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'KeyWord', docArray);">?</a></div>&lt;/Keywords&gt;</div>&lt;/SeatDefinition&gt;</div>&lt;/SeatDefinitionList&gt;</div>&lt;/DataLists&gt;</div><div style="margin-left: 3em">&lt;Metadata&gt; <span class="type"><a title="Jump to &quot;AirShopResMetadataType&quot; type definition." href="#type_AirShopResMetadataType">AirShopResMetadataType</a></span> &lt;/Metadata&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'Metadata', docArray);">?</a></div><div style="margin-left: 3em">&lt;<a title="&quot;Policies&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Policies&quot; element declaration could not be found.');">Policies</a>&gt; ... &lt;/<a title="&quot;Policies&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Policies&quot; element declaration could not be found.');">Policies</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'Policies', docArray);">?</a></div><div style="margin-left: 3em">&lt;<a title="&quot;Errors&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Errors&quot; element declaration could not be found.');">Errors</a>&gt; ... &lt;/<a title="&quot;Errors&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Errors&quot; element declaration could not be found.');">Errors</a>&gt; <span class="occurs">[1]</span></div><span class="group" style="margin-left: 1.5em">End Choice</span><br />&lt;/AirShoppingRS&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('element_AirShoppingRS_xibox', true);
+// -->
+</script>
+    </div>
+    <div class="schemaComponent box">
+      <div><input type="button" id="element_AirShoppingRS_scbox_button" class="control" onclick="switchState('element_AirShoppingRS_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="element_AirShoppingRS_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">AirShoppingRS</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:choice</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;Document&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Document&quot; element declaration could not be found.');">Document</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Success</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;SuccessType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;SuccessType&quot; type definition could not be found.');">SuccessType</a></span></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Warnings</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;WarningsType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;WarningsType&quot; type definition could not be found.');">WarningsType</a></span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="Jump to &quot;AirShoppingProcessing&quot; element declaration." href="#element_AirShoppingProcessing">AirShoppingProcessing</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;ShoppingResponseID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ShoppingResponseID&quot; element declaration could not be found.');">ShoppingResponseID</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">OffersGroup</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;AllOffersSnapshot&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AllOffersSnapshot&quot; element declaration could not be found.');">AllOffersSnapshot</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">AirlineOffers</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;AirlineOfferSnapshot&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AirlineOfferSnapshot&quot; element declaration could not be found.');">AirlineOfferSnapshot</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Offer</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:extension</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a title="&quot;OfferType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OfferType&quot; type definition could not be found.');">OfferType</a></span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">FlightsOverview</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">FlightRef</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:simpleContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:extension</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attribute</span> <span class="scTag">name</span>="<span class="scContent">ODRef</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attribute</span> <span class="scTag">name</span>="<span class="scContent">PriceClassRef</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span></span>"/&gt;</div>&lt;/<span class="scTag">xsd:extension</span>&gt;</div>&lt;/<span class="scTag">xsd:simpleContent</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">ItineraryPriceClassRef</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">OfferItem</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;OfferItemType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OfferItemType&quot; type definition could not be found.');">OfferItemType</a></span></span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">BaggageAllowance</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">FlightRefs</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREFS</span></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">PassengerRefs</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREFS</span></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">BaggageAllowanceRef</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span></span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:extension</span>&gt;</div>&lt;/<span class="scTag">xsd:complexContent</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">ALaCarteOffer</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:extension</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a title="&quot;OfferType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OfferType&quot; type definition could not be found.');">OfferType</a></span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">ALaCarteOfferItem</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;ALaCarteOfferItemType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ALaCarteOfferItemType&quot; type definition could not be found.');">ALaCarteOfferItemType</a></span></span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:extension</span>&gt;</div>&lt;/<span class="scTag">xsd:complexContent</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">PriceCalendar</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">PriceCalendarDate</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:simpleContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:extension</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attribute</span> <span class="scTag">name</span>="<span class="scContent">OriginDestinationReference</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:IDREF</span></span>"/&gt;</div>&lt;/<span class="scTag">xsd:extension</span>&gt;</div>&lt;/<span class="scTag">xsd:simpleContent</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">TotalPrice</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;EncodedPriceType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;EncodedPriceType&quot; type definition could not be found.');">EncodedPriceType</a></span></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">PTC</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:simpleContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:extension</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a title="&quot;PaxSimpleType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;PaxSimpleType&quot; type definition could not be found.');">PaxSimpleType</a></span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attribute</span> <span class="scTag">name</span>="<span class="scContent">Quantity</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:integer</span></span>" <span class="scTag">use</span>="<span class="scContent">optional</span>"/&gt;</div>&lt;/<span class="scTag">xsd:extension</span>&gt;</div>&lt;/<span class="scTag">xsd:simpleContent</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attribute</span> <span class="scTag">name</span>="<span class="scContent">LeadPriceInd</span>"/&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Payments</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Payment</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:extension</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a title="&quot;OrderPaymentFormType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OrderPaymentFormType&quot; type definition could not be found.');">OrderPaymentFormType</a></span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Offers</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Offer</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">OfferItemID</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attribute</span> <span class="scTag">name</span>="<span class="scContent">OfferID</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span></span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attribute</span> <span class="scTag">name</span>="<span class="scContent">Owner</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span></span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attribute</span> <span class="scTag">name</span>="<span class="scContent">ResponseID</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span></span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:extension</span>&gt;</div>&lt;/<span class="scTag">xsd:complexContent</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Promotions</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Promotion</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;PromotionType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;PromotionType&quot; type definition could not be found.');">PromotionType</a></span></span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;Commission&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Commission&quot; element declaration could not be found.');">Commission</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">DataLists</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">PassengerList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Passenger</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;PassengerType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;PassengerType&quot; type definition could not be found.');">PassengerType</a></span></span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">ContactList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">ContactInformation</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;ContactInformationType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ContactInformationType&quot; type definition could not be found.');">ContactInformationType</a></span></span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;BagDisclosureList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BagDisclosureList&quot; element declaration could not be found.');">BagDisclosureList</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">BaggageAllowanceList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">BaggageAllowance</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">BaggageCategory</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;BaggageCategoryListType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;BaggageCategoryListType&quot; type definition could not be found.');">BaggageCategoryListType</a></span></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;AllowanceDescription&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AllowanceDescription&quot; element declaration could not be found.');">AllowanceDescription</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;DimensionAllowance&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DimensionAllowance&quot; element declaration could not be found.');">DimensionAllowance</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;PieceAllowance&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PieceAllowance&quot; element declaration could not be found.');">PieceAllowance</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;WeightAllowance&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;WeightAllowance&quot; element declaration could not be found.');">WeightAllowance</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">BaggageDeterminingCarrier</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;BaggageDeterminingCarrierType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;BaggageDeterminingCarrierType&quot; type definition could not be found.');">BaggageDeterminingCarrierType</a></span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attribute</span> <span class="scTag">name</span>="<span class="scContent">BaggageAllowanceID</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:ID</span></span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;ClassOfServiceList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ClassOfServiceList&quot; element declaration could not be found.');">ClassOfServiceList</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;ContentSourceList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ContentSourceList&quot; element declaration could not be found.');">ContentSourceList</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">DescriptionList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;Description&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Description&quot; element declaration could not be found.');">Description</a></span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;DisclosureList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DisclosureList&quot; element declaration could not be found.');">DisclosureList</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;FareList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;FareList&quot; element declaration could not be found.');">FareList</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">FlightSegmentList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">FlightSegment</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;ListOfFlightSegmentType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ListOfFlightSegmentType&quot; type definition could not be found.');">ListOfFlightSegmentType</a></span></span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">FlightList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Flight</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Journey</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;TotalJourneyType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;TotalJourneyType&quot; type definition could not be found.');">TotalJourneyType</a></span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;SegmentReferences&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;SegmentReferences&quot; element declaration could not be found.');">SegmentReferences</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Settlement</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Method</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;IATA_CodeType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;IATA_CodeType&quot; type definition could not be found.');">IATA_CodeType</a></span></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">InterlineSettlementValue</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;CurrencyAmountOptType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;CurrencyAmountOptType&quot; type definition could not be found.');">CurrencyAmountOptType</a></span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attributeGroup</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;ObjAssociationAttrGroup&quot; attribute group definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ObjAssociationAttrGroup&quot; attribute group definition could not be found.');">ObjAssociationAttrGroup</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attribute</span> <span class="scTag">name</span>="<span class="scContent">FlightKey</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;KeyIdentifier&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;KeyIdentifier&quot; type definition could not be found.');">KeyIdentifier</a></span></span>"/&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">OriginDestinationList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;OriginDestination&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OriginDestination&quot; element declaration could not be found.');">OriginDestination</a></span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;InstructionsList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InstructionsList&quot; element declaration could not be found.');">InstructionsList</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;MediaList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;MediaList&quot; element declaration could not be found.');">MediaList</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;PenaltyList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PenaltyList&quot; element declaration could not be found.');">PenaltyList</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">PriceClassList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">PriceClass</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;PriceClassType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;PriceClassType&quot; type definition could not be found.');">PriceClassType</a></span></span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">ServiceDefinitionList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">ServiceDefinition</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;ServiceDefinitionType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ServiceDefinitionType&quot; type definition could not be found.');">ServiceDefinitionType</a></span></span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;TermsList&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TermsList&quot; element declaration could not be found.');">TermsList</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">SeatDefinitionList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">SeatDefinition</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Description</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Text</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:simpleContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:extension</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a title="&quot;DescriptionSimpleType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;DescriptionSimpleType&quot; type definition could not be found.');">DescriptionSimpleType</a></span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attributeGroup</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;ObjAssociationAttrGroup&quot; attribute group definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ObjAssociationAttrGroup&quot; attribute group definition could not be found.');">ObjAssociationAttrGroup</a></span>"/&gt;</div>&lt;/<span class="scTag">xsd:extension</span>&gt;</div>&lt;/<span class="scTag">xsd:simpleContent</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">MarkupStyle</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;ProperNameSimpleType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ProperNameSimpleType&quot; type definition could not be found.');">ProperNameSimpleType</a></span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Link</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Media</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:choice</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">ObjectID</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;MediaID_Type&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;MediaID_Type&quot; type definition could not be found.');">MediaID_Type</a></span></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;MediaLink&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;MediaLink&quot; element declaration could not be found.');">MediaLink</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">AttachmentID</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;MediaID_Type&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;MediaID_Type&quot; type definition could not be found.');">MediaID_Type</a></span></span>"/&gt;</div>&lt;/<span class="scTag">xsd:choice</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Marketing</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:extension</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a title="&quot;SeatMapMessageType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;SeatMapMessageType&quot; type definition could not be found.');">SeatMapMessageType</a></span></span>"/&gt;</div>&lt;/<span class="scTag">xsd:complexContent</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">SeatCharacteristicCode</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;CodesetValueSimpleType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;CodesetValueSimpleType&quot; type definition could not be found.');">CodesetValueSimpleType</a></span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">UOM</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;SizeUnitSimpleType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;SizeUnitSimpleType&quot; type definition could not be found.');">SizeUnitSimpleType</a></span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">SeatWidthLow</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:decimal</span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">SeatPitchLow</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:decimal</span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Keywords</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">KeyWord</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="&quot;KeyWordType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;KeyWordType&quot; type definition could not be found.');">KeyWordType</a></span></span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attribute</span> <span class="scTag">name</span>="<span class="scContent">SeatDefinitionID</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:ID</span></span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Metadata</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="Jump to &quot;AirShopResMetadataType&quot; type definition." href="#type_AirShopResMetadataType">AirShopResMetadataType</a></span></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;Policies&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Policies&quot; element declaration could not be found.');">Policies</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;Errors&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Errors&quot; element declaration could not be found.');">Errors</a></span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:choice</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:attributeGroup</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;IATA_PayloadStdAttributes&quot; attribute group definition could not be found." href="javascript:void(0)" onclick="alert('&quot;IATA_PayloadStdAttributes&quot; attribute group definition could not be found.');">IATA_PayloadStdAttributes</a></span>"/&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('element_AirShoppingRS_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h2>
+      <a name="SchemaDefinitions" id="SchemaDefinitions">Global Definitions</a>
+    </h2>
+    <h3>Complex Type: <a name="type_AirShopResMetadataType" class="name" id="type_AirShopResMetadataType">AirShopResMetadataType</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>None</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>AirShopResMetadataType</td>
+      </tr>
+      <tr>
+        <th>
+          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+        </th>
+        <td>no</td>
+      </tr>
+      <tr>
+        <th>Documentation</th>
+        <td>Air Shopping Response Metadata definition.<br /> More information at: description.</td>
+      </tr>
+    </table>
+    <div class="sample box">
+      <div><input type="button" id="type_AirShopResMetadataType_xibox_button" class="control" onclick="switchState('type_AirShopResMetadataType_xibox'); return false;" style="display: none" /> <span class="caption">XML Instance Representation</span></div>
+      <div id="type_AirShopResMetadataType_xibox" class="contents">
+        <div style="margin-left: 0em">&lt;...&gt; <br /><div style="margin-left: 1.5em">&lt;Shopping&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Shopping Query-Related Metadata.'); viewDocumentation('Element', 'Shopping', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;<a title="&quot;ShopMetadataGroup&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ShopMetadataGroup&quot; element declaration could not be found.');">ShopMetadataGroup</a>&gt; ... &lt;/<a title="&quot;ShopMetadataGroup&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ShopMetadataGroup&quot; element declaration could not be found.');">ShopMetadataGroup</a>&gt; <span class="occurs">[1]</span></div>&lt;/Shopping&gt;</div><div style="margin-left: 1.5em">&lt;Passenger&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Passenger Metadata List(s).'); viewDocumentation('Element', 'Passenger', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;<a title="&quot;PassengerMetadata&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PassengerMetadata&quot; element declaration could not be found.');">PassengerMetadata</a>&gt; ... &lt;/<a title="&quot;PassengerMetadata&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PassengerMetadata&quot; element declaration could not be found.');">PassengerMetadata</a>&gt; <span class="occurs">[1]</span></div>&lt;/Passenger&gt;</div><div style="margin-left: 1.5em">&lt;Other&gt;  <span class="occurs">[0..1]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'Other', docArray);">?</a><br /><div style="margin-left: 1.5em">&lt;OtherMetadata&gt;  <span class="occurs">[1..*]</span>  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('More information at: description.'); viewDocumentation('Element', 'OtherMetadata', docArray);">?</a><br /><span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a> <span class="occurs">[1]</span></span><br /><div style="margin-left: 3em">&lt;<a title="&quot;AircraftMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AircraftMetadatas&quot; element declaration could not be found.');">AircraftMetadatas</a>&gt; ... &lt;/<a title="&quot;AircraftMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AircraftMetadatas&quot; element declaration could not be found.');">AircraftMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;AirportMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AirportMetadatas&quot; element declaration could not be found.');">AirportMetadatas</a>&gt; ... &lt;/<a title="&quot;AirportMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AirportMetadatas&quot; element declaration could not be found.');">AirportMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;CityMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CityMetadatas&quot; element declaration could not be found.');">CityMetadatas</a>&gt; ... &lt;/<a title="&quot;CityMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CityMetadatas&quot; element declaration could not be found.');">CityMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;CodesetMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CodesetMetadatas&quot; element declaration could not be found.');">CodesetMetadatas</a>&gt; ... &lt;/<a title="&quot;CodesetMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CodesetMetadatas&quot; element declaration could not be found.');">CodesetMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;ContactMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ContactMetadatas&quot; element declaration could not be found.');">ContactMetadatas</a>&gt; ... &lt;/<a title="&quot;ContactMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ContactMetadatas&quot; element declaration could not be found.');">ContactMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;CountryMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CountryMetadatas&quot; element declaration could not be found.');">CountryMetadatas</a>&gt; ... &lt;/<a title="&quot;CountryMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CountryMetadatas&quot; element declaration could not be found.');">CountryMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;CurrencyMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CurrencyMetadatas&quot; element declaration could not be found.');">CurrencyMetadatas</a>&gt; ... &lt;/<a title="&quot;CurrencyMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CurrencyMetadatas&quot; element declaration could not be found.');">CurrencyMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;DescriptionMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DescriptionMetadatas&quot; element declaration could not be found.');">DescriptionMetadatas</a>&gt; ... &lt;/<a title="&quot;DescriptionMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DescriptionMetadatas&quot; element declaration could not be found.');">DescriptionMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;EquivalentID_Metadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;EquivalentID_Metadatas&quot; element declaration could not be found.');">EquivalentID_Metadatas</a>&gt; ... &lt;/<a title="&quot;EquivalentID_Metadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;EquivalentID_Metadatas&quot; element declaration could not be found.');">EquivalentID_Metadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;LanguageMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LanguageMetadatas&quot; element declaration could not be found.');">LanguageMetadatas</a>&gt; ... &lt;/<a title="&quot;LanguageMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LanguageMetadatas&quot; element declaration could not be found.');">LanguageMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;PaymentCardMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentCardMetadatas&quot; element declaration could not be found.');">PaymentCardMetadatas</a>&gt; ... &lt;/<a title="&quot;PaymentCardMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentCardMetadatas&quot; element declaration could not be found.');">PaymentCardMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;PaymentFormMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentFormMetadatas&quot; element declaration could not be found.');">PaymentFormMetadatas</a>&gt; ... &lt;/<a title="&quot;PaymentFormMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentFormMetadatas&quot; element declaration could not be found.');">PaymentFormMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;PriceMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PriceMetadatas&quot; element declaration could not be found.');">PriceMetadatas</a>&gt; ... &lt;/<a title="&quot;PriceMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PriceMetadatas&quot; element declaration could not be found.');">PriceMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;RuleMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;RuleMetadatas&quot; element declaration could not be found.');">RuleMetadatas</a>&gt; ... &lt;/<a title="&quot;RuleMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;RuleMetadatas&quot; element declaration could not be found.');">RuleMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;StateProvMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;StateProvMetadatas&quot; element declaration could not be found.');">StateProvMetadatas</a>&gt; ... &lt;/<a title="&quot;StateProvMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;StateProvMetadatas&quot; element declaration could not be found.');">StateProvMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;ZoneMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ZoneMetadatas&quot; element declaration could not be found.');">ZoneMetadatas</a>&gt; ... &lt;/<a title="&quot;ZoneMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ZoneMetadatas&quot; element declaration could not be found.');">ZoneMetadatas</a>&gt; <span class="occurs">[1]</span></div><div style="margin-left: 3em">&lt;<a title="&quot;AddressMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AddressMetadatas&quot; element declaration could not be found.');">AddressMetadatas</a>&gt; ... &lt;/<a title="&quot;AddressMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AddressMetadatas&quot; element declaration could not be found.');">AddressMetadatas</a>&gt; <span class="occurs">[1]</span></div><span class="group" style="margin-left: 1.5em">End Choice</span><br />&lt;/OtherMetadata&gt;</div>&lt;/Other&gt;</div>&lt;/...&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_AirShopResMetadataType_xibox', true);
+// -->
+</script>
+    </div>
+    <div class="schemaComponent box">
+      <div><input type="button" id="type_AirShopResMetadataType_scbox_button" class="control" onclick="switchState('type_AirShopResMetadataType_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_AirShopResMetadataType_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> <span class="scTag">name</span>="<span class="scContent">AirShopResMetadataType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Shopping</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;ShopMetadataGroup&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ShopMetadataGroup&quot; element declaration could not be found.');">ShopMetadataGroup</a></span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Passenger</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;PassengerMetadata&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PassengerMetadata&quot; element declaration could not be found.');">PassengerMetadata</a></span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Other</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">OtherMetadata</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:choice</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;AircraftMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AircraftMetadatas&quot; element declaration could not be found.');">AircraftMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;AirportMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AirportMetadatas&quot; element declaration could not be found.');">AirportMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;CityMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CityMetadatas&quot; element declaration could not be found.');">CityMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;CodesetMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CodesetMetadatas&quot; element declaration could not be found.');">CodesetMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;ContactMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ContactMetadatas&quot; element declaration could not be found.');">ContactMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;CountryMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CountryMetadatas&quot; element declaration could not be found.');">CountryMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;CurrencyMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CurrencyMetadatas&quot; element declaration could not be found.');">CurrencyMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;DescriptionMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DescriptionMetadatas&quot; element declaration could not be found.');">DescriptionMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;EquivalentID_Metadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;EquivalentID_Metadatas&quot; element declaration could not be found.');">EquivalentID_Metadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;LanguageMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LanguageMetadatas&quot; element declaration could not be found.');">LanguageMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;PaymentCardMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentCardMetadatas&quot; element declaration could not be found.');">PaymentCardMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;PaymentFormMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentFormMetadatas&quot; element declaration could not be found.');">PaymentFormMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;PriceMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PriceMetadatas&quot; element declaration could not be found.');">PriceMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;RuleMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;RuleMetadatas&quot; element declaration could not be found.');">RuleMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;StateProvMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;StateProvMetadatas&quot; element declaration could not be found.');">StateProvMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;ZoneMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ZoneMetadatas&quot; element declaration could not be found.');">ZoneMetadatas</a></span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;AddressMetadatas&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AddressMetadatas&quot; element declaration could not be found.');">AddressMetadatas</a></span>"/&gt;</div>&lt;/<span class="scTag">xsd:choice</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_AirShopResMetadataType_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Complex Type: <a name="type_OrdViewProcessType" class="name" id="type_OrdViewProcessType">OrdViewProcessType</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td><span class="type"><a title="&quot;OrderProcessResultType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OrderProcessResultType&quot; type definition could not be found.');">OrderProcessResultType</a></span> &lt; <strong>OrdViewProcessType</strong> (by extension)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>OrdViewProcessType</td>
+      </tr>
+      <tr>
+        <th>
+          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+        </th>
+        <td>no</td>
+      </tr>
+      <tr>
+        <th>Documentation</th>
+        <td>Response Message Processing.<br /> More information at: description.</td>
+      </tr>
+    </table>
+    <div class="sample box">
+      <div><input type="button" id="type_OrdViewProcessType_xibox_button" class="control" onclick="switchState('type_OrdViewProcessType_xibox'); return false;" style="display: none" /> <span class="caption">XML Instance Representation</span></div>
+      <div id="type_OrdViewProcessType_xibox" class="contents">
+        <div style="margin-left: 0em">&lt;...&gt; <br /><div class="other" style="margin-left: 1.5em;">&lt;!-- '<span class="type"><a title="&quot;OrderProcessResultType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OrderProcessResultType&quot; type definition could not be found.');">OrderProcessResultType</a></span>' super type was not found in this schema. Some elements and attributes may be missing. --&gt;</div><div style="margin-left: 1.5em" class="newFields">&lt;<a title="&quot;Alerts&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Alerts&quot; element declaration could not be found.');">Alerts</a>&gt; ... &lt;/<a title="&quot;Alerts&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Alerts&quot; element declaration could not be found.');">Alerts</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em" class="newFields">&lt;<a title="&quot;Notices&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Notices&quot; element declaration could not be found.');">Notices</a>&gt; ... &lt;/<a title="&quot;Notices&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Notices&quot; element declaration could not be found.');">Notices</a>&gt; <span class="occurs">[0..1]</span></div><div style="margin-left: 1.5em" class="newFields">&lt;<a title="&quot;Remarks&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Remarks&quot; element declaration could not be found.');">Remarks</a>&gt; ... &lt;/<a title="&quot;Remarks&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Remarks&quot; element declaration could not be found.');">Remarks</a>&gt; <span class="occurs">[0..1]</span></div>&lt;/...&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_OrdViewProcessType_xibox', true);
+// -->
+</script>
+    </div>
+    <div class="schemaComponent box">
+      <div><input type="button" id="type_OrdViewProcessType_scbox_button" class="control" onclick="switchState('type_OrdViewProcessType_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_OrdViewProcessType_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> <span class="scTag">name</span>="<span class="scContent">OrdViewProcessType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:extension</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a title="&quot;OrderProcessResultType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;OrderProcessResultType&quot; type definition could not be found.');">OrderProcessResultType</a></span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;Alerts&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Alerts&quot; element declaration could not be found.');">Alerts</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;Notices&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Notices&quot; element declaration could not be found.');">Notices</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a title="&quot;Remarks&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Remarks&quot; element declaration could not be found.');">Remarks</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:extension</span>&gt;</div>&lt;/<span class="scTag">xsd:complexContent</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_OrdViewProcessType_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <div id="legend">
+      <h2>
+        <a name="Legend" id="Legend">Legend</a>
+      </h2>
+      <div style="float: left; width: 15em;">
+        <h3 style="margin-bottom: 0px;">Complex Type:</h3>
+        <div class="hint" style="margin-left: 0em;">Schema Component Type</div>
+      </div>
+      <div style="float: left; width: 15em;">
+        <h3 style="margin-bottom: 0px;">
+          <span class="name">AusAddress</span>
+        </h3>
+        <div class="hint" style="margin-left: 0em;">Schema Component Name</div>
+      </div>
+      <table class="hierarchy" style="clear : both">
+        <tr>
+          <th>Super-types:</th>
+          <td><span class="type" style="color: #0000FF; text-decoration:underline;">Address</span> &lt; <span class="current">AusAddress</span> (by extension)</td>
+        </tr>
+        <tr>
+          <th>Sub-types:</th>
+          <td>
+            <ul>
+              <li><span class="type" style="color: #0000FF; text-decoration:underline;">QLDAddress</span> (by restriction)</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <div class="hint">If this schema component is a type definition, its type hierarchy is shown in a gray-bordered box.</div>
+      <table class="properties">
+        <tr>
+          <th>Name</th>
+          <td>AusAddress</td>
+        </tr>
+        <tr>
+          <th>
+            <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+          </th>
+          <td>no</td>
+        </tr>
+      </table>
+      <div class="hint">The table above displays the properties of this schema component.</div>
+      <div class="sample box">
+        <div>
+          <span class="caption">XML Instance Representation</span>
+        </div>
+        <div class="contents"><span style="margin-left: 0em">&lt;...</span><span class="newFields"><span> country="<span class="fixed">Australia</span>"</span></span>&gt; <br /><span style="margin-left: 1.5em" class="inherited">&lt;unitNo&gt; <span class="type">string</span> &lt;/unitNo&gt; <span class="occurs">[0..1]</span></span><br /><span style="margin-left: 1.5em" class="inherited">&lt;houseNo&gt; <span class="type">string</span> &lt;/houseNo&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 1.5em" class="inherited">&lt;street&gt; <span class="type">string</span> &lt;/street&gt; <span class="occurs">[1]</span></span><br /><span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a><span class="occurs">[1]</span></span><br /><span style="margin-left: 3em" class="inherited">&lt;city&gt; <span class="type">string</span> &lt;/city&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 3em" class="inherited">&lt;town&gt; <span class="type">string</span> &lt;/town&gt; <span class="occurs">[1]</span></span><br /><span class="group" style="margin-left: 1.5em">End Choice</span><br /><span class="newFields"><span style="margin-left: 1.5em">&lt;state&gt; <span class="type" style="text-decoration:underline;">AusStates</span> &lt;/state&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 1.5em">&lt;postcode&gt; <span class="constraint">string &lt;&lt;<em>pattern</em> = [1-9][0-9]{3}&gt;&gt;</span> &lt;/postcode&gt; <span class="occurs">[1]</span><a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Post code must be a four-digit number.'); viewDocumentation('Element', 'postcode', docArray);">?</a></span><br /></span><span style="margin-left: 0em">&lt;/...&gt;</span><br /></div>
+      </div>
+      <div class="hint">
+        <p>The XML Instance Representation table above shows the schema component's content as an XML instance.</p>
+        <ul>
+          <li>The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].</li>
+          <li>Model group information are shown in gray, e.g. Start Choice ... End Choice.</li>
+          <li>For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in <span style="font-weight: bold">bold</span>.</li>
+          <li>If an element/attribute has a fixed value, the fixed value is shown in green, e.g. country="Australia".</li>
+          <li>Otherwise, the type of the element/attribute is displayed.
+               <ul><li>If the element/attribute's type is in the schema, a link is provided to it.</li><li>For local simple type definitions, the constraints are displayed in angle brackets, e.g. &lt;&lt;<em>pattern</em> = [1-9][0-9]{3}&gt;&gt;.</li></ul></li>
+          <li>If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked, e.g. &lt;postcode&gt;.</li>
+        </ul>
+      </div>
+      <div class="schemaComponent box">
+        <div>
+          <span class="caption">Schema Component Representation</span>
+        </div>
+        <div class="contents">
+          <span style="margin-left: 0em">&lt;<span class="scTag">complexType</span><span class="scTag">name</span>="<span class="scContent">AusAddress</span>"&gt;</span>
+          <br />
+          <span style="margin-left: 1.5em">&lt;<span class="scTag">complexContent</span>&gt;</span>
+          <br />
+          <span style="margin-left: 3em">&lt;<span class="scTag">extension</span><span class="scTag">base</span>="<span class="scContent"><span class="type" style="text-decoration:underline;">Address</span></span>"&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;<span class="scTag">sequence</span>&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;<span class="scTag">element</span><span class="scTag">name</span>="<span class="scContent">state</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type" style="text-decoration:underline;">AusStates</span></span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;<span class="scTag">element</span><span class="scTag">name</span>="<span class="scContent">postcode</span>"&gt;</span>
+          <br />
+          <span style="margin-left: 7.5em">&lt;<span class="scTag">simpleType</span>&gt;</span>
+          <br />
+          <span style="margin-left: 9em">&lt;<span class="scTag">restriction</span><span class="scTag">base</span>="<span class="scContent"><span class="type">string</span></span>"&gt;</span>
+          <br />
+          <span style="margin-left: 10.5em">&lt;<span class="scTag">pattern</span><span class="scTag">value</span>="<span class="scContent">[1-9][0-9]{3}</span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 9em">&lt;/<span class="scTag">restriction</span>&gt;</span>
+          <br />
+          <span style="margin-left: 7.5em">&lt;/<span class="scTag">simpleType</span>&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;/<span class="scTag">element</span>&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;/<span class="scTag">sequence</span>&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;<span class="scTag">attribute</span><span class="scTag">name</span>="<span class="scContent">country</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type">string</span></span>" <span class="scTag">fixed</span>="<span class="scContent">Australia</span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 3em">&lt;/<span class="scTag">extension</span>&gt;</span>
+          <br />
+          <span style="margin-left: 1.5em">&lt;/<span class="scTag">complexContent</span>&gt;</span>
+          <br />
+          <span style="margin-left: 0em">&lt;/<span class="scTag">complexType</span>&gt;</span>
+          <br />
+        </div>
+      </div>
+      <div class="hint">The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)</div>
+      <div style="text-align: right; clear: both;">
+        <a href="#top">top</a>
+      </div>
+      <hr />
+    </div>
+    <div id="glossary">
+      <h2>
+        <a name="Glossary" id="Glossary">Glossary</a>
+      </h2>
+      <p><span class="glossaryTerm"><a name="term_Abstract" id="term_Abstract">Abstract</a> </span>(Applies to complex type definitions and element declarations). An abstract element or complex type cannot used to validate an element instance. If there is a reference to an abstract element, only element declarations that can substitute the abstract element can be used to validate the instance. For references to abstract type definitions, only derived types can be used.</p>
+      <p><span class="glossaryTerm"><a name="term_All" id="term_All">All Model Group</a> </span>Child elements can be provided <em>in any order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-all" href="http://www.w3.org/TR/xmlschema-1/#element-all">http://www.w3.org/TR/xmlschema-1/#element-all</a>.</p>
+      <p><span class="glossaryTerm"><a name="term_Choice" id="term_Choice">Choice Model Group</a> </span><em>Only one</em> from the list of child elements and model groups can be provided in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-choice" href="http://www.w3.org/TR/xmlschema-1/#element-choice">http://www.w3.org/TR/xmlschema-1/#element-choice</a>.</p>
+      <p><span class="glossaryTerm"><a name="term_CollapseWS" id="term_CollapseWS">Collapse Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32). Then, collapse contiguous sequences of space characters into single space character, and remove leading and trailing space characters.</p>
+      <p><span class="glossaryTerm"><a name="term_ElemBlock" id="term_ElemBlock">Disallowed Substitutions</a> </span>(Applies to element declarations). If <em>substitution</em> is specified, then <a title="Look up 'substitution group' in glossary" href="#term_SubGroup">substitution group</a> members cannot be used in place of the given element declaration to validate element instances. If <em>derivation methods</em>, e.g. extension, restriction, are specified, then the given element declaration will not validate element instances that have types derived from the element declaration's type using the specified derivation methods. Normally, element instances can override their declaration's type by specifying an <code>xsi:type</code> attribute.</p>
+      <p><span class="glossaryTerm"><a name="term_Key" id="term_Key">Key Constraint</a> </span>Like <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>, but additionally requires that the specified value(s) must be provided. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <p><span class="glossaryTerm"><a name="term_KeyRef" id="term_KeyRef">Key Reference Constraint</a> </span>Ensures that the specified value(s) must match value(s) from a <a title="Look up 'Key Constraint' in glossary" href="#term_Key">Key Constraint</a> or <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <p><span class="glossaryTerm"><a name="term_ModelGroup" id="term_ModelGroup">Model Group</a> </span>Groups together element content, specifying the order in which the element content can occur and the number of times the group of element content may be repeated. See: <a title="http://www.w3.org/TR/xmlschema-1/#Model_Groups" href="http://www.w3.org/TR/xmlschema-1/#Model_Groups">http://www.w3.org/TR/xmlschema-1/#Model_Groups</a>.</p>
+      <p><span class="glossaryTerm"><a name="term_Nillable" id="term_Nillable">Nillable</a> </span>(Applies to element declarations). If an element declaration is nillable, instances can use the <code>xsi:nil</code> attribute. The <code>xsi:nil</code> attribute is the boolean attribute, <em>nil</em>, from the <em>http://www.w3.org/2001/XMLSchema-instance</em> namespace. If an element instance has an <code>xsi:nil</code> attribute set to true, it can be left empty, even though its element declaration may have required content.</p>
+      <p><span class="glossaryTerm"><a name="term_Notation" id="term_Notation">Notation</a> </span>A notation is used to identify the format of a piece of data. Values of elements and attributes that are of type, NOTATION, must come from the names of declared notations. See: <a title="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations" href="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations">http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations</a>.</p>
+      <p><span class="glossaryTerm"><a name="term_PreserveWS" id="term_PreserveWS">Preserve Whitespace Policy</a> </span>Preserve whitespaces exactly as they appear in instances.</p>
+      <p><span class="glossaryTerm"><a name="term_TypeFinal" id="term_TypeFinal">Prohibited Derivations</a> </span>(Applies to type definitions). Derivation methods that cannot be used to create sub-types from a given type definition.</p>
+      <p><span class="glossaryTerm"><a name="term_TypeBlock" id="term_TypeBlock">Prohibited Substitutions</a> </span>(Applies to complex type definitions). Prevents sub-types that have been derived using the specified derivation methods from validating element instances in place of the given type definition.</p>
+      <p><span class="glossaryTerm"><a name="term_ReplaceWS" id="term_ReplaceWS">Replace Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32).</p>
+      <p><span class="glossaryTerm"><a name="term_Sequence" id="term_Sequence">Sequence Model Group</a> </span>Child elements and model groups must be provided <em>in the specified order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-sequence" href="http://www.w3.org/TR/xmlschema-1/#element-sequence">http://www.w3.org/TR/xmlschema-1/#element-sequence</a>.</p>
+      <p><span class="glossaryTerm"><a name="term_SubGroup" id="term_SubGroup">Substitution Group</a> </span>Elements that are <em>members</em> of a substitution group can be used wherever the <em>head</em> element of the substitution group is referenced.</p>
+      <p><span class="glossaryTerm"><a name="term_ElemFinal" id="term_ElemFinal">Substitution Group Exclusions</a> </span>(Applies to element declarations). Prohibits element declarations from nominating themselves as being able to substitute a given element declaration, if they have types that are derived from the original element's type using the specified derivation methods.</p>
+      <p><span class="glossaryTerm"><a name="term_TargetNS" id="term_TargetNS">Target Namespace</a> </span>The target namespace identifies the namespace that components in this schema belongs to. If no target namespace is provided, then the schema components do not belong to any namespace.</p>
+      <p><span class="glossaryTerm"><a name="term_Unique" id="term_Unique">Uniqueness Constraint</a> </span>Ensures uniqueness of an element/attribute value, or a combination of values, within a specified scope. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <div style="text-align: right; clear: both;">
+        <a href="#top">top</a>
+      </div>
+      <hr />
+    </div>
+    <p class="footer">Generated by <a href="http://xml.fiforms.org/xs3p/">xs3p</a> (<a href="http://titanium.dstc.edu.au/xml/xs3p">old link</a>)
+               . Last modified: <script type="text/javascript">
+<!--
+document.write(document.lastModified);
+// -->
+</script></p>
+  </body>
+</html>
